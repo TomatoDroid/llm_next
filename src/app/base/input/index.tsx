@@ -55,16 +55,16 @@ const Input = ({
             ref={ref}
             style={styleCss}
             className={cn(
-                'w-full appearance-none border border-components-input-bg-normal py-[7px] text-components-input-text-filled caret-primary-600',
+                'w-full appearance-none border border-components-input-bg-normal py-[7px] text-components-input-text-filled caret-primary-600 outline-none placeholder:text-components-input-text-placeholder hover:border-components-input-border-hover hover:bg-components-input-bg-hover focus:border-components-input-border-active focus:bg-components-input-bg-active focus:shadow-xs',
                 inputVariants({ size }),
-                showClearIcon && 'pl-[26px]',
+                showLeftIcon && 'pl-[26px]',
                 showLeftIcon && size === 'large' && 'pl-7',
                 showClearIcon && value && 'pr-[26px]',
                 showClearIcon && value && size === 'large' && 'pr-7',
                 destructive && 'pr-[26px]',
                 destructive && size === 'large' && 'pr-7',
-                disabled && '',
-                destructive && '',
+                disabled && 'cursor-not-allowed border-transparent bg-components-input-bg-disabled text-components-input-text-filled-disabled hover:border-transparent hover:bg-components-input-bg-disabled',
+                destructive && 'border-components-input-border-destructive bg-components-input-bg-destructive text-components-input-text-filled hover:border-components-input-border-destructive hover:bg-components-input-bg-destructive focus:border-components-input-bg-destructive focus:bg-components-input-bg-destructive',
                 className
             )}
             placeholder={placeholder ?? showLeftIcon ? '搜索' : '请输入'}
@@ -74,8 +74,8 @@ const Input = ({
             {...props}
         />
         {showClearIcon && value && !disabled && !destructive && (
-            <div>
-                <RiCloseCircleFill />
+            <div className={cn('group absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer p-[1px]')} onClick={onClear}>
+                <RiCloseCircleFill className='size-3.5 cursor-pointer text-text-quaternary group-hover:text-text-tertiary'/>
             </div>
         )}
         {
