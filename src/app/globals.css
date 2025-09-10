@@ -1,15 +1,11 @@
 @import "tailwindcss";
+/* 导入主题文件 */
+@import "./themes/light.css" (prefers-color-scheme: light);
+@import "./themes/dark.css" (prefers-color-scheme: dark);
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +13,64 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Gray colors */
+  --color-gray-25: #fcfcfd;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f2f4f7;
+  --color-gray-200: #eaecf0;
+  --color-gray-300: #d0d5dd;
+  --color-gray-400: #98a2b3;
+  --color-gray-500: #667085;
+  --color-gray-600: #344054;
+  --color-gray-700: #475467;
+  --color-gray-800: #1d2939;
+  --color-gray-900: #101828;
+
+  /* Primary colors */
+  --color-primary-25: #f5f8ff;
+  --color-primary-50: #eff4ff;
+  --color-primary-100: #d1e0ff;
+  --color-primary-200: #b2ccff;
+  --color-primary-300: #84adff;
+  --color-primary-400: #528bff;
+  --color-primary-500: #2970ff;
+  --color-primary-600: #155eef;
+  --color-primary-700: #004eeb;
+  --color-primary-800: #0040c1;
+  --color-primary-900: #00359e;
+
+  /* Blue colors */
+  --color-blue-500: #e1effe;
+
+  /* Green colors */
+  --color-green-50: #f3faf7;
+  --color-green-100: #def7ec;
+  --color-green-800: #03543f;
+
+  /* Yellow colors */
+  --color-yellow-100: #fdf6b2;
+  --color-yellow-800: #723b13;
+
+  /* Purple colors */
+  --color-purple-50: #f6f5ff;
+  --color-purple-200: #dcd7fe;
+
+  /* Indigo colors */
+  --color-indigo-25: #f5f8ff;
+  --color-indigo-50: #eef4ff;
+  --color-indigo-100: #e0eaff;
+  --color-indigo-300: #a4bcfd;
+  --color-indigo-400: #8098f9;
+  --color-indigo-600: #444ce7;
+  --color-indigo-800: #2d31a6;
 }
 
 body {
