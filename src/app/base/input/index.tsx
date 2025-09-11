@@ -67,7 +67,7 @@ const Input = ({
         destructive && 'border-components-input-border-destructive bg-components-input-bg-destructive text-components-input-text-filled hover:border-components-input-border-destructive hover:bg-components-input-bg-destructive focus:border-components-input-bg-destructive focus:bg-components-input-bg-destructive',
         className
       )}
-      placeholder={placeholder ?? showLeftIcon ? '搜索' : '请输入'}
+      placeholder={placeholder ?? (showLeftIcon ? '搜索' : '请输入')}
       value={value}
       onChange={onChange}
       disabled={disabled}
