@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+@theme {
+  /* Button base styles */
+  --btn: inline-flex justify-center items-center cursor-pointer whitespace-nowrap;
+
+  /* Button disabled state */
+  --btn-disabled: cursor-not-allowed;
+
+  /* Button sizes */
+  --btn-small: px-2 h-6 rounded-md text-xs font-medium;
+  --btn-medium: px-3.5 h-8 rounded-lg text-[13px] leading-4 font-medium;
+  --btn-large: px-4 h-9 rounded-[10px] text-sm font-semibold;
+}
+
+/* Button component styles using CSS custom properties */
+.btn {
+  @apply inline-flex justify-center items-center cursor-pointer whitespace-nowrap;
+}
+
+.btn-disabled {
+  @apply cursor-not-allowed;
+}
+
+/* Size variants */
+.btn-small {
+  @apply px-2 h-6 rounded-md text-xs font-medium;
+}
+
+.btn-medium {
+  @apply px-3.5 h-8 rounded-lg text-[13px] leading-4 font-medium;
+}
+
+.btn-large {
+  @apply px-4 h-9 rounded-[10px] text-sm font-semibold;
+}
+
+/* Primary button */
+.btn-primary {
+  @apply shadow;
+  background-color: var(--color-components-button-primary-bg);
+  border-color: var(--color-components-button-primary-border);
+  color: var(--color-components-button-primary-text);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-components-button-primary-bg-hover);
+  border-color: var(--color-components-button-primary-border-hover);
+}
+
+.btn-primary.btn-destructive {
+  background-color: var(--color-components-button-destructive-primary-bg);
+  border-color: var(--color-components-button-destructive-primary-border);
+  color: var(--color-components-button-destructive-primary-text);
+}
+
+.btn-primary.btn-destructive:hover {
+  background-color: var(--color-components-button-destructive-primary-bg-hover);
+  border-color: var(--color-components-button-destructive-primary-border-hover);
+}
+
+.btn-primary.btn-disabled {
+  @apply shadow-none;
+  background-color: var(--color-components-button-primary-bg-disabled);
+  border-color: var(--color-components-button-primary-border-disabled);
+  color: var(--color-components-button-primary-text-disabled);
+}
+
+.btn-primary.btn-destructive.btn-disabled {
+  @apply shadow-none;
+  background-color: var(--color-components-button-destructive-primary-bg-disabled);
+  border-color: var(--color-components-button-destructive-primary-border-disabled);
+  color: var(--color-components-button-destructive-primary-text-disabled);
+}
+
+/* Secondary button */
+.btn-secondary {
+  @apply border-[0.5px] shadow-xs;
+  background-color: var(--color-components-button-secondary-bg);
+  border-color: var(--color-components-button-secondary-border);
+  color: var(--color-components-button-secondary-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-components-button-secondary-bg-hover);
+  border-color: var(--color-components-button-secondary-border-hover);
+}
+
+.btn-secondary.btn-disabled {
+  background-color: var(--color-components-button-secondary-bg-disabled);
+  border-color: var(--color-components-button-secondary-border-disabled);
+  color: var(--color-components-button-secondary-text-disabled);
+}
+
+.btn-secondary.btn-destructive {
+  background-color: var(--color-components-button-destructive-secondary-bg);
+  border-color: var(--color-components-button-destructive-secondary-border);
+  color: var(--color-components-button-destructive-secondary-text);
+}
+
+.btn-secondary.btn-destructive:hover {
+  background-color: var(--color-components-button-destructive-secondary-bg-hover);
+  border-color: var(--color-components-button-destructive-secondary-border-hover);
+}
+
+.btn-secondary.btn-destructive.btn-disabled {
+  background-color: var(--color-components-button-destructive-secondary-bg-disabled);
+  border-color: var(--color-components-button-destructive-secondary-border-disabled);
+  color: var(--color-components-button-destructive-secondary-text-disabled);
+}
+
+/* Secondary accent button */
+.btn-secondary-accent {
+  @apply border-[0.5px] shadow-xs;
+  background-color: var(--color-components-button-secondary-accent-bg);
+  border-color: var(--color-components-button-secondary-accent-border);
+  color: var(--color-components-button-secondary-accent-text);
+}
+
+.btn-secondary-accent:hover {
+  background-color: var(--color-components-button-secondary-accent-bg-hover);
+  border-color: var(--color-components-button-secondary-accent-border-hover);
+}
+
+.btn-secondary-accent.btn-disabled {
+  background-color: var(--color-components-button-secondary-accent-bg-disabled);
+  border-color: var(--color-components-button-secondary-accent-border-disabled);
+  color: var(--color-components-button-secondary-accent-text-disabled);
+}
+
+/* Warning button (using destructive primary styles) */
+.btn-warning {
+  background-color: var(--color-components-button-destructive-primary-bg);
+  border-color: var(--color-components-button-destructive-primary-border);
+  color: var(--color-components-button-destructive-primary-text);
+}
+
+.btn-warning:hover {
+  background-color: var(--color-components-button-destructive-primary-bg-hover);
+  border-color: var(--color-components-button-destructive-primary-border-hover);
+}
+
+.btn-warning.btn-disabled {
+  background-color: var(--color-components-button-destructive-primary-bg-disabled);
+  border-color: var(--color-components-button-destructive-primary-border-disabled);
+  color: var(--color-components-button-destructive-primary-text-disabled);
+}
+
+/* Tertiary button */
+.btn-tertiary {
+  background-color: var(--color-components-button-tertiary-bg);
+  color: var(--color-components-button-tertiary-text);
+}
+
+.btn-tertiary:hover {
+  background-color: var(--color-components-button-tertiary-bg-hover);
+}
+
+.btn-tertiary.btn-disabled {
+  background-color: var(--color-components-button-tertiary-bg-disabled);
+  color: var(--color-components-button-tertiary-text-disabled);
+}
+
+.btn-tertiary.btn-destructive {
+  background-color: var(--color-components-button-destructive-tertiary-bg);
+  color: var(--color-components-button-destructive-tertiary-text);
+}
+
+.btn-tertiary.btn-destructive:hover {
+  background-color: var(--color-components-button-destructive-tertiary-bg-hover);
+}
+
+.btn-tertiary.btn-destructive.btn-disabled {
+  background-color: var(--color-components-button-destructive-tertiary-bg-disabled);
+  color: var(--color-components-button-destructive-tertiary-text-disabled);
+}
+
+/* Ghost button */
+.btn-ghost {
+  color: var(--color-components-button-ghost-text);
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-components-button-ghost-bg-hover);
+}
+
+.btn-ghost.btn-disabled {
+  color: var(--color-components-button-ghost-text-disabled);
+}
+
+.btn-ghost.btn-destructive {
+  color: var(--color-components-button-destructive-ghost-text);
+}
+
+.btn-ghost.btn-destructive:hover {
+  background-color: var(--color-components-button-destructive-ghost-bg-hover);
+}
+
+.btn-ghost.btn-destructive.btn-disabled {
+  color: var(--color-components-button-destructive-ghost-text-disabled);
+}
+
+/* Ghost accent button */
+.btn-ghost-accent {
+  color: var(--color-components-button-secondary-accent-text);
+}
+
+.btn-ghost-accent:hover {
+  background-color: var(--color-state-accent-hover);
+}
+
+.btn-ghost-accent.btn-disabled {
+  color: var(--color-components-button-secondary-accent-text-disabled);
+}

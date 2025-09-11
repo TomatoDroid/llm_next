@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Input from "./base/input";
 import Spinner from "./base/spinner";
+import Button from "./base/button";
 
 export default function Home() {
   return (
@@ -12,6 +13,9 @@ export default function Home() {
           className="w-full max-w-[500px]"
         />
         <Spinner loading></Spinner>
+        <Button loading={true}>
+          按钮
+        </Button>
         <Image
           className="dark:invert"
           src="/next.svg"

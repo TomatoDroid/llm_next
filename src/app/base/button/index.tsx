@@ -1,6 +1,8 @@
 import cn from '@/utils/classNames';
 import { cva, type VariantProps } from "class-variance-authority";
 import React, { CSSProperties } from "react";
+import Spinner from '../spinner';
+import './index.css'
 
 
 const buttonVariants = cva(
@@ -60,7 +62,7 @@ const Button = ({
       {...props}
     >
       {children}
-      {loading && <>loading</>}
+      {loading && <Spinner loading={loading} className={cn('!ml-1 !h-3 !w-3 !border-2 !text-white', spinnerClassName)}></Spinner>}
     </button>)
 }
 
