@@ -2,6 +2,7 @@
 /* 导入主题文件 */
 @import "./themes/light.css" (prefers-color-scheme: light);
 @import "./themes/dark.css" (prefers-color-scheme: dark);
+@import "./themes/utility.css";
 
 :root {
   --background: #ffffff;
