@@ -3,11 +3,13 @@ import Image from "next/image";
 import Input from "./base/input";
 import Spinner from "./base/spinner";
 import Button from "./base/button";
+import Toast from "./base/toast";
 
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        <Toast message="message" type="error"></Toast>
         <Input
           styleCss={{ color: "red" }}
           className="w-full max-w-[500px]"

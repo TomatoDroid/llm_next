@@ -2,6 +2,10 @@
 /* 导入主题文件 */
 @import "./themes/light.css" (prefers-color-scheme: light);
 @import "./themes/dark.css" (prefers-color-scheme: dark);
+@import "./themes/manual-light.css" (prefers-color-scheme: light);
+@import "./themes/manual-dark.css" (prefers-color-scheme: dark);
+@import "./themes/markdown-light.css" (prefers-color-scheme: light);
+@import "./themes/markdown-dark.css" (prefers-color-scheme: dark);
 @import "./themes/utility.css";
 
 :root {
@@ -72,6 +76,31 @@
   --color-indigo-400: #8098f9;
   --color-indigo-600: #444ce7;
   --color-indigo-800: #2d31a6;
+
+  /* 阴影配置 */
+  --shadow-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-sm: 0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.10);
+  --shadow-sm-no-bottom: 0px -1px 2px 0px rgba(16, 24, 40, 0.06), 0px -1px 3px 0px rgba(16, 24, 40, 0.10);
+  --shadow-md: 0px 2px 4px -2px rgba(16, 24, 40, 0.06), 0px 4px 8px -2px rgba(16, 24, 40, 0.10);
+  --shadow-lg: 0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+  --shadow-xl: 0px 8px 8px -4px rgba(16, 24, 40, 0.03), 0px 20px 24px -4px rgba(16, 24, 40, 0.08);
+  --shadow-2xl: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
+  --shadow-3xl: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
+  --shadow-status-indicator-green: 0px 2px 6px 0px var(--color-components-badge-status-light-success-halo), 0px 0px 0px 1px var(--color-components-badge-status-light-border-outer);
+  --shadow-status-indicator-warning: 0px 2px 6px 0px var(--color-components-badge-status-light-warning-halo), 0px 0px 0px 1px var(--color-components-badge-status-light-border-outer);
+  --shadow-status-indicator-red: 0px 2px 6px 0px var(--color-components-badge-status-light-error-halo), 0px 0px 0px 1px var(--color-components-badge-status-light-border-outer);
+  --shadow-status-indicator-blue: 0px 2px 6px 0px var(--color-components-badge-status-light-normal-halo), 0px 0px 0px 1px var(--color-components-badge-status-light-border-outer);
+  --shadow-status-indicator-gray: 0px 1px 2px 0px var(--color-components-badge-status-light-disabled-halo), 0px 0px 0px 1px var(--color-components-badge-status-light-border-outer);
+
+  /* 透明度配置 */
+  --opacity-2: 0.02;
+  --opacity-8: 0.08;
+
+  /* 字体大小配置 */
+  --font-size-2xs: 0.625rem;
+
+  /* 动画配置 */
+  --animate-spin-slow: spin 2s linear infinite;
 }
 
 body {
