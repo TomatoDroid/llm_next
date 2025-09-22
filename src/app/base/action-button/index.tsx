@@ -45,4 +45,4 @@ const ActionButton = ({ className, size, state, styleCss, ref, children, ...prop
 ActionButton.displayName = "ActionButton";
 
 export default ActionButton;
-export { ActionButton };
+export { ActionButton, actionButtonVariants };
