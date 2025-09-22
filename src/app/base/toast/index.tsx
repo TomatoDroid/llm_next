@@ -8,6 +8,7 @@ import {
 } from "@remixicon/react";
 import { ReactNode, useEffect, useState } from "react";
 import { createContext, useContext } from "use-context-selector";
+import ActionButton from "../action-button";
 
 export type IToastProps = {
   type?: "success" | "error" | "warning" | "info";
@@ -56,63 +57,56 @@ const Toast = ({
       <div
         className={`${classNames(
           "absolute inset-0 -z-10 opacity-40",
-          type === "success" && "bg-toast-warning-bg",
-          type === "error" && "bg-toast-error-bg",
-          type === "warning" && "bg-toast-warning-bg",
-          type === "info" && "bg-toast-info-bg"
+          type === "success" && "[background:var(--color-toast-success-bg)]",
+          type === "error" && "[background:var(--color-toast-error-bg)]",
+          type === "warning" && "[background:var(--color-toast-warning-bg)]",
+          type === "info" && "[background:var(--color-toast-info-bg)]"
         )}`}
       />
       <div className={`flex ${size === "md" ? "gap-1" : "gap-0.5"}`}>
         <div
-          className={`flex items-center justify-center ${
-            size === "md" ? "p-0.5" : "p-1"
-          }`}
+          className={`flex items-center justify-center ${size === "md" ? "p-0.5" : "p-1"
+            }`}
         >
           {type === "success" && (
             <RiCheckboxCircleFill
-              className={`${
-                size === "md" ? "size-5" : "size-4"
-              } text-text-success`}
+              className={`${size === "md" ? "size-5" : "size-4"
+                } text-text-success`}
               aria-hidden="true"
             />
           )}
           {type === "error" && (
             <RiErrorWarningFill
-              className={`${
-                size === "md" ? "size-5" : "size-4"
-              } text-text-destructive`}
+              className={`${size === "md" ? "size-5" : "size-4"
+                } text-text-destructive`}
               aria-hidden="true"
             />
           )}
           {type === "warning" && (
             <RiAlertFill
-              className={`${
-                size === "md" ? "size-5" : "size-4"
-              } text-text-warning-secondary`}
+              className={`${size === "md" ? "size-5" : "size-4"
+                } text-text-warning-secondary`}
               aria-hidden="true"
             />
           )}
           {type === "info" && (
             <RiInformation2Fill
-              className={`${
-                size === "md" ? "size-5" : "size-4"
-              } text-text-accent`}
+              className={`${size === "md" ? "size-5" : "size-4"
+                } text-text-accent`}
               aria-hidden="true"
             />
           )}
         </div>
-        <div
-          className={`flex py-1 ${
-            size === "md" ? "px-1" : "px-0.5"
-          } grow flex-col items-start gap-1`}
-        >
-          <div>
-            <div>{message}</div>
+        <div className={`flex py-1 ${size === "md" ? "px-1" : "px-0.5"} grow flex-col items-start gap-1`}>
+          <div className="flex items-center gap-1">
+            <div className="system-sm-semibold text-text-primary [word-break:break-word]">{message}</div>
             {customComponents}
           </div>
-          {children && <div>{children}</div>}
+          {children && <div className="system-xs-regular text-text-secondary">{children}</div>}
         </div>
-        {(<RiCloseLine className="size-4" />)}
+        {close && (<ActionButton className="z-[1000]" onClick={close}>
+          <RiCloseLine className="size-4 shrink-0 text-text-tertiary" />
+        </ActionButton>)}
       </div>
     </div>
   );

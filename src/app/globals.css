@@ -2,10 +2,6 @@
 /* 导入主题文件 */
 @import "./themes/light.css" (prefers-color-scheme: light);
 @import "./themes/dark.css" (prefers-color-scheme: dark);
-@import "./themes/manual-light.css" (prefers-color-scheme: light);
-@import "./themes/manual-dark.css" (prefers-color-scheme: dark);
-@import "./themes/markdown-light.css" (prefers-color-scheme: light);
-@import "./themes/markdown-dark.css" (prefers-color-scheme: dark);
 @import "./themes/utility.css";
 
 :root {
