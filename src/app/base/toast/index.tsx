@@ -9,6 +9,8 @@ import {
 import { ReactNode, useEffect, useState } from "react";
 import { createContext, useContext } from "use-context-selector";
 import ActionButton from "../action-button";
+import { createRoot } from "react-dom/client";
+import { noop } from "lodash-es";
 
 export type IToastProps = {
   type?: "success" | "error" | "warning" | "info";
@@ -65,48 +67,65 @@ const Toast = ({
       />
       <div className={`flex ${size === "md" ? "gap-1" : "gap-0.5"}`}>
         <div
-          className={`flex items-center justify-center ${size === "md" ? "p-0.5" : "p-1"
-            }`}
+          className={`flex items-center justify-center ${
+            size === "md" ? "p-0.5" : "p-1"
+          }`}
         >
           {type === "success" && (
             <RiCheckboxCircleFill
-              className={`${size === "md" ? "size-5" : "size-4"
-                } text-text-success`}
+              className={`${
+                size === "md" ? "size-5" : "size-4"
+              } text-text-success`}
               aria-hidden="true"
             />
           )}
           {type === "error" && (
             <RiErrorWarningFill
-              className={`${size === "md" ? "size-5" : "size-4"
-                } text-text-destructive`}
+              className={`${
+                size === "md" ? "size-5" : "size-4"
+              } text-text-destructive`}
               aria-hidden="true"
             />
           )}
           {type === "warning" && (
             <RiAlertFill
-              className={`${size === "md" ? "size-5" : "size-4"
-                } text-text-warning-secondary`}
+              className={`${
+                size === "md" ? "size-5" : "size-4"
+              } text-text-warning-secondary`}
               aria-hidden="true"
             />
           )}
           {type === "info" && (
             <RiInformation2Fill
-              className={`${size === "md" ? "size-5" : "size-4"
-                } text-text-accent`}
+              className={`${
+                size === "md" ? "size-5" : "size-4"
+              } text-text-accent`}
               aria-hidden="true"
             />
           )}
         </div>
-        <div className={`flex py-1 ${size === "md" ? "px-1" : "px-0.5"} grow flex-col items-start gap-1`}>
+        <div
+          className={`flex py-1 ${
+            size === "md" ? "px-1" : "px-0.5"
+          } grow flex-col items-start gap-1`}
+        >
           <div className="flex items-center gap-1">
-            <div className="system-sm-semibold text-text-primary [word-break:break-word]">{message}</div>
+            <div className="system-sm-semibold text-text-primary [word-break:break-word]">
+              {message}
+            </div>
             {customComponents}
           </div>
-          {children && <div className="system-xs-regular text-text-secondary">{children}</div>}
+          {children && (
+            <div className="system-xs-regular text-text-secondary">
+              {children}
+            </div>
+          )}
         </div>
-        {close && (<ActionButton className="z-[1000]" onClick={close}>
-          <RiCloseLine className="size-4 shrink-0 text-text-tertiary" />
-        </ActionButton>)}
+        {close && (
+          <ActionButton className="z-[1000]" onClick={close}>
+            <RiCloseLine className="size-4 shrink-0 text-text-tertiary" />
+          </ActionButton>
+        )}
       </div>
     </div>
   );
@@ -147,6 +166,70 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
       {children}
     </ToastContext.Provider>
   );
+};
+
+Toast.notify = ({
+  type,
+  size = "md",
+  message,
+  duration,
+  className,
+  customComponents,
+  onClose,
+}: Pick<
+  IToastProps,
+  | "type"
+  | "size"
+  | "message"
+  | "duration"
+  | "className"
+  | "customComponents"
+  | "onClose"
+>): ToastHandle => {
+  const defaultDuration = type === "success" || type === "info" ? 3000 : 6000;
+  const toastHandler: ToastHandle = {};
+
+  if (typeof window === "object") {
+    const holder = document.createElement("div");
+    const root = createRoot(holder);
+
+    toastHandler.clear = () => {
+      if (holder) {
+        root.unmount();
+        holder.remove();
+      }
+      onClose?.();
+    };
+
+    root.render(
+      <ToastContext.Provider
+        value={{
+          notify: noop,
+          close: () => {
+            if (holder) {
+              root.unmount();
+              holder.remove();
+            }
+            onClose?.();
+          },
+        }}
+      >
+        <Toast
+          type={type}
+          size={size}
+          message={message}
+          duration={duration}
+          className={className}
+          customComponents={customComponents}
+        />
+      </ToastContext.Provider>
+    );
+    document.body.appendChild(holder);
+    const d = duration ?? defaultDuration;
+    if (d > 0) setTimeout(toastHandler.clear, d);
+  }
+
+  return toastHandler;
 };
 
 export default Toast;
