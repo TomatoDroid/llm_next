@@ -1,5 +1,5 @@
 import { autoUpdate, flip, offset, OffsetOptions, Placement, shift, size, useDismiss, useFloating, useFocus, useHover, useInteractions, useRole } from "@floating-ui/react"
-import React, { createContext, useCallback, useContext, useMemo, useState } from "react"
+import React, { createContext, HTMLProps, RefObject, useCallback, useContext, useMemo, useState } from "react"
 
 export type PortalToFollowElemOptions = {
   placement?: Placement
@@ -65,7 +65,7 @@ export function usePortalToFollowElem({
     setOpen: handleOpenChange,
     ...interactions,
     ...data
-  }), [])
+  }), [open, handleOpenChange, interactions, data])
 }
 
 type ContextType = ReturnType<typeof usePortalToFollowElem> | null
@@ -86,13 +86,19 @@ export function PortalToFollowElem({
 }: { children: React.ReactNode } & PortalToFollowElemOptions) {
   const tooltip = usePortalToFollowElem(options)
   return (
-    <PortalToFollowElemContext value={tooltip}>
+    <PortalToFollowElemContext.Provider value={tooltip}>
       {children}
-    </PortalToFollowElemContext>
+    </PortalToFollowElemContext.Provider>
   )
 }
 
-export const PortalToFollowElemTrigger = () => {
+export const PortalToFollowElemTrigger = ({
+  ref: propRef,
+  children,
+  asChild = false,
+  ...props,
+}: HTMLProps<HTMLElement> & {ref: RefObject<HTMLElement>, asChild?: boolean}) => {
+
   return <div></div>
 }
 
