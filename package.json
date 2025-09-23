@@ -12,6 +12,8 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.8",
+    "@heroicons/react": "^2.2.0",
     "@remixicon/react": "^4.6.0",
     "class-variance-authority": "^0.7.1",
     "lodash": "^4.17.21",
