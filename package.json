@@ -12,6 +12,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.27.16",
     "@headlessui/react": "^2.2.8",
     "@heroicons/react": "^2.2.0",
     "@remixicon/react": "^4.6.0",

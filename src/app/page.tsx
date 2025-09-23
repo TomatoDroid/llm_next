@@ -1,23 +1,32 @@
 "use client";
 import Image from "next/image";
 import Button from "./base/button";
+import Divider from "./base/divider";
 import Input from "./base/input";
 import Loading from "./base/loading";
+import LocaleSigninSelect from "./base/select/local-signin";
 import Spinner from "./base/spinner";
 import Toast, { ToastProvider } from "./base/toast";
 
 export default function Home() {
+  const local = [{ value: "zh-CN", name: "简体中文" }, { value: "en-US", name: "English" }, { value: "ja-JP", name: "日本語" }];
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <Loading type="app" />
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        <div className="flex gap-1 items-center h-5">
+          <LocaleSigninSelect items={local} value="zh-CN" onChange={(val) => { console.log(val) }} />
+          <Divider type={"vertical"}/>
+          <Button>
+            按钮
+          </Button>
+        </div>
         <ToastProvider >
           <Toast
-            message="message带回家啊可视对讲卡萨丁开机啊手机打撒科技"
+            message="message"
             type="success"
-            onClose={() => {}}
+            onClose={() => { }}
           >
-            nihdsajl你哈蒂萨
           </Toast>
         </ToastProvider>
         <Input styleCss={{ color: "red" }} className="w-full max-w-[500px]" />
