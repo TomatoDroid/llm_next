@@ -1,5 +1,6 @@
-import { autoUpdate, flip, offset, OffsetOptions, Placement, shift, size, useDismiss, useFloating, useFocus, useHover, useInteractions, useRole } from "@floating-ui/react"
-import React, { createContext, HTMLProps, RefObject, useCallback, useContext, useMemo, useState } from "react"
+import classNames from "@/utils/classNames"
+import { autoUpdate, flip, FloatingPortal, offset, OffsetOptions, Placement, shift, size, useDismiss, useFloating, useFocus, useHover, useInteractions, useMergeRefs, useRole } from "@floating-ui/react"
+import React, { cloneElement, createContext, HTMLProps, isValidElement, RefObject, useCallback, useContext, useMemo, useState } from "react"
 
 export type PortalToFollowElemOptions = {
   placement?: Placement
@@ -96,16 +97,60 @@ export const PortalToFollowElemTrigger = ({
   ref: propRef,
   children,
   asChild = false,
-  ...props,
-}: HTMLProps<HTMLElement> & {ref: RefObject<HTMLElement>, asChild?: boolean}) => {
+  ...props
+}: HTMLProps<HTMLElement> & { ref?: RefObject<HTMLElement>, asChild?: boolean }) => {
+  const context = usePortalToFollowElemContext()
+  const childrenRef = (children as any).props?.ref
+  const ref = useMergeRefs([context.refs.setReference, propRef, childrenRef])
 
-  return <div></div>
+  if (asChild && isValidElement(children)) {
+    return cloneElement(
+      children,
+      context.getReferenceProps({
+        ref,
+        ...props,
+        ...children.props,
+        "data-state": context.open ? "open" : "closed"
+      } as HTMLProps<HTMLElement>)
+    )
+  }
+  return (
+    <div ref={ref} className={classNames('inline-block', classNames)} data-state={context.open ? 'open' : 'closed'}
+      {...context.getReferenceProps(props)}
+    >
+      {children}
+    </div>
+  )
 }
 
 PortalToFollowElemTrigger.displayName = 'PortalToFollowElemTrigger'
 
-export const PortalToFollowElemContent = () => {
-  return <div></div>
+export const PortalToFollowElemContent = ({
+  ref: propRef,
+  style,
+  ...props
+}: HTMLProps<HTMLDivElement> & { ref?: RefObject<HTMLDivElement> }) => {
+  const context = usePortalToFollowElemContext()
+  const ref = useMergeRefs([context.refs.setFloating, propRef])
+
+  if (!context.open) {
+    return null
+  }
+  const body = document.body
+
+  return (
+    <FloatingPortal root={body}>
+      <div
+        ref={ref}
+        style={{
+          ...context.floatingStyles,
+          ...style,
+          visibility: context.middlewareData.hide?.referenceHidden ? 'hidden' : 'visible',
+        }}
+        {...context.getFloatingProps(props)}
+      />
+    </FloatingPortal>
+  )
 }
 
 PortalToFollowElemContent.displayName = 'PortalToFollowElemContent'
