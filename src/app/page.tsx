@@ -6,6 +6,7 @@ import Input from "./base/input";
 import Loading from "./base/loading";
 import LocaleSigninSelect from "./base/select/local-signin";
 import Spinner from "./base/spinner";
+import { ThemeSelector } from "./base/theme-selector";
 import Toast, { ToastProvider } from "./base/toast";
 
 export default function Home() {
@@ -17,9 +18,7 @@ export default function Home() {
         <div className="flex gap-1 items-center h-5">
           <LocaleSigninSelect items={local} value="zh-CN" onChange={(val) => { console.log(val) }} />
           <Divider type={"vertical"}/>
-          <Button>
-            按钮
-          </Button>
+          <ThemeSelector />
         </div>
         <ToastProvider >
           <Toast
