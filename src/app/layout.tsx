@@ -31,6 +31,7 @@ export default function RootLayout({
         <ThemeProvider
           defaultTheme="system"
           enableSystem
+          enableColorScheme={false}
         >
           {children}
         </ThemeProvider>

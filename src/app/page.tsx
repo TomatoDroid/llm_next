@@ -12,7 +12,7 @@ import Toast, { ToastProvider } from "./base/toast";
 export default function Home() {
   const local = [{ value: "zh-CN", name: "简体中文" }, { value: "en-US", name: "English" }, { value: "ja-JP", name: "日本語" }];
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-background-default-burn">
       <Loading type="app" />
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <div className="flex gap-1 items-center h-5">
@@ -28,7 +28,7 @@ export default function Home() {
           >
           </Toast>
         </ToastProvider>
-        <Input styleCss={{ color: "red" }} className="w-full max-w-[500px]" />
+        <Input className="w-full max-w-[500px]" />
         <Spinner loading></Spinner>
         <Button
           onClick={() => {

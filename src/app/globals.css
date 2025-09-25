@@ -1,27 +1,12 @@
 @import "tailwindcss";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 /* 导入主题文件 */
-@import "./themes/light.css" (prefers-color-scheme: light);
-@import "./themes/dark.css" (prefers-color-scheme: dark);
+@import "./themes/light.css";
+@import "./themes/dark.css";
 @import "./themes/utility.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 @theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-
   /* Gray colors */
   --color-gray-25: #fcfcfd;
   --color-gray-50: #f9fafb;
@@ -112,10 +97,4 @@
 
   /* 动画配置 */
   --animate-spin-slow: spin 2s linear infinite;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }

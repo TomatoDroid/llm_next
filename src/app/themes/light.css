@@ -1,5 +1,4 @@
-/* Attention: Generate by code. Don't update by hand!!! */
-@theme inline  {
+[data-theme="light"] {
   --color-components-input-bg-normal: rgb(200 206 218 / 0.25);
   --color-components-input-text-placeholder: #98a2b2;
   --color-components-input-bg-hover: rgb(200 206 218 / 0.14);
@@ -49,31 +48,49 @@
   --color-components-button-ghost-bg-hover: rgb(200 206 218 / 0.2);
 
   --color-components-button-destructive-primary-text: #ffffff;
-  --color-components-button-destructive-primary-text-disabled: rgb(255 255 255 / 0.6);
+  --color-components-button-destructive-primary-text-disabled: rgb(
+    255 255 255 / 0.6
+  );
   --color-components-button-destructive-primary-bg: #d92d20;
   --color-components-button-destructive-primary-bg-hover: #b42318;
   --color-components-button-destructive-primary-bg-disabled: #fee4e2;
   --color-components-button-destructive-primary-border: rgb(24 24 27 / 0.04);
-  --color-components-button-destructive-primary-border-hover: rgb(24 24 27 / 0.08);
-  --color-components-button-destructive-primary-border-disabled: rgb(255 255 255 / 0);
+  --color-components-button-destructive-primary-border-hover: rgb(
+    24 24 27 / 0.08
+  );
+  --color-components-button-destructive-primary-border-disabled: rgb(
+    255 255 255 / 0
+  );
 
   --color-components-button-destructive-secondary-text: #d92d20;
-  --color-components-button-destructive-secondary-text-disabled: rgb(240 68 56 / 0.2);
+  --color-components-button-destructive-secondary-text-disabled: rgb(
+    240 68 56 / 0.2
+  );
   --color-components-button-destructive-secondary-bg: #ffffff;
   --color-components-button-destructive-secondary-bg-hover: #fef3f2;
   --color-components-button-destructive-secondary-bg-disabled: #fef3f2;
   --color-components-button-destructive-secondary-border: rgb(24 24 27 / 0.08);
-  --color-components-button-destructive-secondary-border-hover: rgb(240 68 56 / 0.25);
-  --color-components-button-destructive-secondary-border-disabled: rgb(240 68 56 / 0.04);
+  --color-components-button-destructive-secondary-border-hover: rgb(
+    240 68 56 / 0.25
+  );
+  --color-components-button-destructive-secondary-border-disabled: rgb(
+    240 68 56 / 0.04
+  );
 
   --color-components-button-destructive-tertiary-text: #d92d20;
-  --color-components-button-destructive-tertiary-text-disabled: rgb(240 68 56 / 0.2);
+  --color-components-button-destructive-tertiary-text-disabled: rgb(
+    240 68 56 / 0.2
+  );
   --color-components-button-destructive-tertiary-bg: #fee4e2;
   --color-components-button-destructive-tertiary-bg-hover: #fecdca;
-  --color-components-button-destructive-tertiary-bg-disabled: rgb(240 68 56 / 0.04);
+  --color-components-button-destructive-tertiary-bg-disabled: rgb(
+    240 68 56 / 0.04
+  );
 
   --color-components-button-destructive-ghost-text: #d92d20;
-  --color-components-button-destructive-ghost-text-disabled: rgb(240 68 56 / 0.2);
+  --color-components-button-destructive-ghost-text-disabled: rgb(
+    240 68 56 / 0.2
+  );
   --color-components-button-destructive-ghost-bg-hover: #fee4e2;
 
   --color-components-button-secondary-accent-text: #155aef;
@@ -83,7 +100,9 @@
   --color-components-button-secondary-accent-bg-disabled: #f9fafb;
   --color-components-button-secondary-accent-border: rgb(16 24 40 / 0.14);
   --color-components-button-secondary-accent-border-hover: rgb(16 24 40 / 0.14);
-  --color-components-button-secondary-accent-border-disabled: rgb(16 24 40 / 0.04);
+  --color-components-button-secondary-accent-border-disabled: rgb(
+    16 24 40 / 0.04
+  );
 
   --color-components-button-indigo-bg: #444ce7;
   --color-components-button-indigo-bg-hover: #3538cd;
@@ -144,9 +163,15 @@
   --color-components-panel-on-panel-item-bg: #ffffff;
   --color-components-panel-on-panel-item-bg-hover: #f9fafb;
   --color-components-panel-on-panel-item-bg-alt: #f9fafb;
-  --color-components-panel-on-panel-item-bg-transparent: rgb(255 255 255 / 0.95);
-  --color-components-panel-on-panel-item-bg-hover-transparent: rgb(249 250 251 / 0);
-  --color-components-panel-on-panel-item-bg-destructive-hover-transparent: rgb(254 243 242 / 0);
+  --color-components-panel-on-panel-item-bg-transparent: rgb(
+    255 255 255 / 0.95
+  );
+  --color-components-panel-on-panel-item-bg-hover-transparent: rgb(
+    249 250 251 / 0
+  );
+  --color-components-panel-on-panel-item-bg-destructive-hover-transparent: rgb(
+    254 243 242 / 0
+  );
 
   --color-components-panel-bg-transparent: rgb(255 255 255 / 0);
 
@@ -280,14 +305,18 @@
   --color-components-premium-badge-blue-bg-stop-0-hover: #296dff;
   --color-components-premium-badge-blue-bg-stop-100-hover: #004aeb;
   --color-components-premium-badge-blue-glow-hover: #84abff;
-  --color-components-premium-badge-blue-stroke-stop-0-hover: rgb(255 255 255 / 0.95);
+  --color-components-premium-badge-blue-stroke-stop-0-hover: rgb(
+    255 255 255 / 0.95
+  );
   --color-components-premium-badge-blue-stroke-stop-100-hover: #00329e;
 
   --color-components-premium-badge-highlight-stop-0: rgb(255 255 255 / 0.12);
   --color-components-premium-badge-highlight-stop-100: rgb(255 255 255 / 0.3);
   --color-components-premium-badge-indigo-bg-stop-0: #8098f9;
   --color-components-premium-badge-indigo-bg-stop-100: #444ce7;
-  --color-components-premium-badge-indigo-stroke-stop-0: rgb(255 255 255 / 0.95);
+  --color-components-premium-badge-indigo-stroke-stop-0: rgb(
+    255 255 255 / 0.95
+  );
   --color-components-premium-badge-indigo-stroke-stop-100: #6172f3;
   --color-components-premium-badge-indigo-text-stop-0: #f5f8ff;
   --color-components-premium-badge-indigo-text-stop-100: #e0eaff;
@@ -295,7 +324,9 @@
   --color-components-premium-badge-indigo-glow-hover: #a4bcfd;
   --color-components-premium-badge-indigo-bg-stop-0-hover: #6172f3;
   --color-components-premium-badge-indigo-bg-stop-100-hover: #2d31a6;
-  --color-components-premium-badge-indigo-stroke-stop-0-hover: rgb(255 255 255 / 0.95);
+  --color-components-premium-badge-indigo-stroke-stop-0-hover: rgb(
+    255 255 255 / 0.95
+  );
   --color-components-premium-badge-indigo-stroke-stop-100-hover: #2d31a6;
 
   --color-components-premium-badge-grey-bg-stop-0: #98a2b2;
@@ -308,12 +339,16 @@
   --color-components-premium-badge-grey-glow-hover: #d0d5dc;
   --color-components-premium-badge-grey-bg-stop-0-hover: #676f83;
   --color-components-premium-badge-grey-bg-stop-100-hover: #354052;
-  --color-components-premium-badge-grey-stroke-stop-0-hover: rgb(255 255 255 / 0.95);
+  --color-components-premium-badge-grey-stroke-stop-0-hover: rgb(
+    255 255 255 / 0.95
+  );
   --color-components-premium-badge-grey-stroke-stop-100-hover: #354052;
 
   --color-components-premium-badge-orange-bg-stop-0: #ff692e;
   --color-components-premium-badge-orange-bg-stop-100: #e04f16;
-  --color-components-premium-badge-orange-stroke-stop-0: rgb(255 255 255 / 0.95);
+  --color-components-premium-badge-orange-stroke-stop-0: rgb(
+    255 255 255 / 0.95
+  );
   --color-components-premium-badge-orange-stroke-stop-100: #e62e05;
   --color-components-premium-badge-orange-text-stop-0: #fefaf5;
   --color-components-premium-badge-orange-text-stop-100: #fdead7;
@@ -321,7 +356,9 @@
   --color-components-premium-badge-orange-glow-hover: #f7b27a;
   --color-components-premium-badge-orange-bg-stop-0-hover: #ff4405;
   --color-components-premium-badge-orange-bg-stop-100-hover: #b93815;
-  --color-components-premium-badge-orange-stroke-stop-0-hover: rgb(255 255 255 / 0.95);
+  --color-components-premium-badge-orange-stroke-stop-0-hover: rgb(
+    255 255 255 / 0.95
+  );
   --color-components-premium-badge-orange-stroke-stop-100-hover: #bc1b06;
 
   --color-components-progress-bar-bg: rgb(21 90 239 / 0.04);
@@ -762,70 +799,156 @@
   --color-dify-logo-dify-logo-blue: #0033ff;
   --color-dify-logo-dify-logo-black: #000000;
 
-  --color-chatbot-bg: linear-gradient(180deg,
+  --color-chatbot-bg: linear-gradient(
+    180deg,
     rgba(249, 250, 251, 0.9) 0%,
-    rgba(242, 244, 247, 0.9) 90.48%);
-  --color-chat-bubble-bg: linear-gradient(180deg,
+    rgba(242, 244, 247, 0.9) 90.48%
+  );
+  --color-chat-bubble-bg: linear-gradient(
+    180deg,
     #fff 0%,
-    rgba(255, 255, 255, 0.6) 100%);
-  --color-chat-input-mask: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  --color-chat-input-mask: linear-gradient(
+    180deg,
     rgba(255, 255, 255, 0.01) 0%,
-    #F2F4F7 100%);
-  --color-workflow-process-bg: linear-gradient(90deg,
+    #f2f4f7 100%
+  );
+  --color-workflow-process-bg: linear-gradient(
+    90deg,
     rgba(200, 206, 218, 0.2) 0%,
-    rgba(200, 206, 218, 0.04) 100%);
-  --color-workflow-run-failed-bg: linear-gradient(98deg,
-    rgba(240, 68, 56, 0.10) 0%,
-    rgba(255, 255, 255, 0) 26.01%);
-  --color-workflow-batch-failed-bg: linear-gradient(92deg,
+    rgba(200, 206, 218, 0.04) 100%
+  );
+  --color-workflow-run-failed-bg: linear-gradient(
+    98deg,
+    rgba(240, 68, 56, 0.1) 0%,
+    rgba(255, 255, 255, 0) 26.01%
+  );
+  --color-workflow-batch-failed-bg: linear-gradient(
+    92deg,
     rgba(240, 68, 56, 0.25) 0%,
-    rgba(255, 255, 255, 0) 100%);
-  --color-marketplace-divider-bg: linear-gradient(90deg,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --color-marketplace-divider-bg: linear-gradient(
+    90deg,
     rgba(16, 24, 40, 0.08) 0%,
-    rgba(255, 255, 255, 0) 100%);
-  --color-marketplace-plugin-empty: linear-gradient(180deg,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --color-marketplace-plugin-empty: linear-gradient(
+    180deg,
     rgba(255, 255, 255, 0) 0%,
-    #fcfcfd 100%);
-  --color-toast-success-bg: linear-gradient(92deg,
+    #fcfcfd 100%
+  );
+  --color-toast-success-bg: linear-gradient(
+    92deg,
     rgba(23, 178, 106, 0.25) 0%,
-    rgba(255, 255, 255, 0) 100%);
-  --color-toast-warning-bg: linear-gradient(92deg,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --color-toast-warning-bg: linear-gradient(
+    92deg,
     rgba(247, 144, 9, 0.25) 0%,
-    rgba(255, 255, 255, 0) 100%);
-  --color-toast-error-bg: linear-gradient(92deg,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --color-toast-error-bg: linear-gradient(
+    92deg,
     rgba(240, 68, 56, 0.25) 0%,
-    rgba(255, 255, 255, 0) 100%);
-  --color-toast-info-bg: linear-gradient(92deg,
-    rgba(11, 165, 236, 0.25) 0%);
-  --color-account-teams-bg: linear-gradient(271deg,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --color-toast-info-bg: linear-gradient(92deg, rgba(11, 165, 236, 0.25) 0%);
+  --color-account-teams-bg: linear-gradient(
+    271deg,
     rgba(249, 250, 251, 0.9) -0.1%,
-    rgba(242, 244, 247, 0.9) 98.26%);
-  --color-app-detail-bg: linear-gradient(169deg,
-    #F2F4F7 1.18%,
-    #F9FAFB 99.52%);
-  --color-app-detail-overlay-bg: linear-gradient(270deg,
-    rgba(0, 0, 0, 0.00) 0%,
+    rgba(242, 244, 247, 0.9) 98.26%
+  );
+  --color-app-detail-bg: linear-gradient(169deg, #f2f4f7 1.18%, #f9fafb 99.52%);
+  --color-app-detail-overlay-bg: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0) 0%,
     rgba(16, 24, 40, 0.01) 8%,
-    rgba(16, 24, 40, 0.18) 100%);
-  --color-dataset-chunk-process-success-bg: linear-gradient(92deg, rgba(23, 178, 106, 0.25) 0%, rgba(255, 255, 255, 0.00) 100%);
-  --color-dataset-chunk-process-error-bg: linear-gradient(92deg, rgba(240, 68, 56, 0.25) 0%, rgba(255, 255, 255, 0.00) 100%);
-  --color-dataset-chunk-detail-card-hover-bg: linear-gradient(180deg, #F2F4F7 0%, #F9FAFB 100%);
-  --color-dataset-child-chunk-expand-btn-bg: linear-gradient(90deg, rgba(200, 206, 218, 0.20) 0%, rgba(200, 206, 218, 0.04) 100%);
-  --color-dataset-option-card-blue-gradient: linear-gradient(90deg, #F2F4F7 0%, #F9FAFB 100%);
-  --color-dataset-option-card-purple-gradient: linear-gradient(90deg, #F0EEFA 0%, #F9FAFB 100%);
-  --color-dataset-option-card-orange-gradient: linear-gradient(90deg, #F8F2EE 0%, #F9FAFB 100%);
-  --color-dataset-chunk-list-mask-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FCFCFD 100%);
-  --mask-top2bottom-gray-50-to-transparent: linear-gradient(180deg,
+    rgba(16, 24, 40, 0.18) 100%
+  );
+  --color-dataset-chunk-process-success-bg: linear-gradient(
+    92deg,
+    rgba(23, 178, 106, 0.25) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --color-dataset-chunk-process-error-bg: linear-gradient(
+    92deg,
+    rgba(240, 68, 56, 0.25) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --color-dataset-chunk-detail-card-hover-bg: linear-gradient(
+    180deg,
+    #f2f4f7 0%,
+    #f9fafb 100%
+  );
+  --color-dataset-child-chunk-expand-btn-bg: linear-gradient(
+    90deg,
+    rgba(200, 206, 218, 0.2) 0%,
+    rgba(200, 206, 218, 0.04) 100%
+  );
+  --color-dataset-option-card-blue-gradient: linear-gradient(
+    90deg,
+    #f2f4f7 0%,
+    #f9fafb 100%
+  );
+  --color-dataset-option-card-purple-gradient: linear-gradient(
+    90deg,
+    #f0eefa 0%,
+    #f9fafb 100%
+  );
+  --color-dataset-option-card-orange-gradient: linear-gradient(
+    90deg,
+    #f8f2ee 0%,
+    #f9fafb 100%
+  );
+  --color-dataset-chunk-list-mask-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    #fcfcfd 100%
+  );
+  --mask-top2bottom-gray-50-to-transparent: linear-gradient(
+    180deg,
     rgba(242, 244, 247, 0.9) 0%,
-    rgba(242, 244, 247, 0.05) 100%);
-  --color-line-divider-bg: linear-gradient(90deg, rgba(16, 24, 40, 0.08) 0%, rgba(255, 255, 255, 0) 100%);
-  --color-access-app-icon-mask-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%);
-  --color-premium-yearly-tip-text-background: linear-gradient(91deg, #F79009 2.18%, #DC6803 108.79%);
-  --color-premium-badge-background: linear-gradient(95deg, rgba(152, 162, 178, 0.90) 0%, rgba(103, 111, 131, 0.90) 105.58%);
-  --color-premium-text-background: linear-gradient(92deg, rgba(252, 252, 253, 0.95) 0%, rgba(242, 244, 247, 0.95) 97.78%);
+    rgba(242, 244, 247, 0.05) 100%
+  );
+  --color-line-divider-bg: linear-gradient(
+    90deg,
+    rgba(16, 24, 40, 0.08) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --color-access-app-icon-mask-bg: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  --color-premium-yearly-tip-text-background: linear-gradient(
+    91deg,
+    #f79009 2.18%,
+    #dc6803 108.79%
+  );
+  --color-premium-badge-background: linear-gradient(
+    95deg,
+    rgba(152, 162, 178, 0.9) 0%,
+    rgba(103, 111, 131, 0.9) 105.58%
+  );
+  --color-premium-text-background: linear-gradient(
+    92deg,
+    rgba(252, 252, 253, 0.95) 0%,
+    rgba(242, 244, 247, 0.95) 97.78%
+  );
   --color-premium-badge-border-highlight-color: #fffffff2;
-  --color-price-enterprise-background: linear-gradient(180deg, rgba(185, 211, 234, 0.00) 0%, rgba(180, 209, 234, 0.92) 100%);
-  --color-grid-mask-background: linear-gradient(0deg, #FFF 0%, rgba(217, 217, 217, 0.10) 62.25%, rgba(217, 217, 217, 0.10) 100%);
+  --color-price-enterprise-background: linear-gradient(
+    180deg,
+    rgba(185, 211, 234, 0) 0%,
+    rgba(180, 209, 234, 0.92) 100%
+  );
+  --color-grid-mask-background: linear-gradient(
+    0deg,
+    #fff 0%,
+    rgba(217, 217, 217, 0.1) 62.25%,
+    rgba(217, 217, 217, 0.1) 100%
+  );
   --color-background-gradient-bg-fill-chat-bubble-bg-3: #e1effe;
 
   --color-prettylights-syntax-comment: #6e7781;
