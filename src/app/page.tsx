@@ -1,12 +1,12 @@
 "use client";
-import Button from "./base/button";
-import Divider from "./base/divider";
-import Input from "./base/input";
-import Loading from "./base/loading";
-import LocaleSigninSelect from "./base/select/local-signin";
-import Spinner from "./base/spinner";
-import ThemeSelector from "./base/theme-selector";
-import Toast, { ToastProvider } from "./base/toast";
+import Button from "./components/base/button";
+import Divider from "./components/base/divider";
+import Input from "./components/base/input";
+import Loading from "./components/base/loading";
+import LocaleSigninSelect from "./components/base/select/local-signin";
+import Spinner from "./components/base/spinner";
+import ThemeSelector from "./components/base/theme-selector";
+import Toast, { ToastProvider } from "./components/base/toast";
 
 export default function Home() {
   const local = [{ value: "zh-CN", name: "简体中文" }, { value: "en-US", name: "English" }, { value: "ja-JP", name: "日本語" }];

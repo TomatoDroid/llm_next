@@ -6,11 +6,11 @@ import {
   RiErrorWarningFill,
   RiInformation2Fill,
 } from "@remixicon/react";
+import { noop } from "lodash-es";
 import { ReactNode, useEffect, useState } from "react";
+import { createRoot } from "react-dom/client";
 import { createContext, useContext } from "use-context-selector";
 import ActionButton from "../action-button";
-import { createRoot } from "react-dom/client";
-import { noop } from "lodash-es";
 
 export type IToastProps = {
   type?: "success" | "error" | "warning" | "info";

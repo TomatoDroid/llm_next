@@ -1,14 +1,14 @@
 "use client"
 import dynamic from "next/dynamic";
-import Divider from "../base/divider";
-import LocaleSigninSelect from "../base/select/local-signin";
+import Divider from "../components/base/divider";
+import LocaleSigninSelect from "../components/base/select/local-signin";
 
-const DifyLogo = dynamic(() => import("@/app/base/logo/dify-logo"), {
+const DifyLogo = dynamic(() => import("@/app/components/base/logo/dify-logo"), {
   ssr: false,
   loading: () => <div className="w-16 h-7 bg-transparent"></div>
 })
 
-const ThemeSelector = dynamic(() => import('@/app/base/theme-selector'), {
+const ThemeSelector = dynamic(() => import('@/app/components/base/theme-selector'), {
   ssr: false,
   loading: () => <div className='size-8 bg-transparent' />,
 })

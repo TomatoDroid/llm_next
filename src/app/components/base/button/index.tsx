@@ -2,7 +2,7 @@ import cn from '@/utils/classNames';
 import { cva, type VariantProps } from "class-variance-authority";
 import React, { CSSProperties } from "react";
 import Spinner from '../spinner';
-import './index.css'
+import './index.css';
 
 
 const buttonVariants = cva(
