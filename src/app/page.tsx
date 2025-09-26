@@ -5,7 +5,7 @@ import Input from "./base/input";
 import Loading from "./base/loading";
 import LocaleSigninSelect from "./base/select/local-signin";
 import Spinner from "./base/spinner";
-import { ThemeSelector } from "./base/theme-selector";
+import ThemeSelector from "./base/theme-selector";
 import Toast, { ToastProvider } from "./base/toast";
 
 export default function Home() {

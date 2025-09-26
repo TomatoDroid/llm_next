@@ -29,7 +29,7 @@ const ThemeOption = ({ icon, label, isActive, onClick }: ThemeOptionProps) => (
     )}
   </button>
 );
-export function ThemeSelector() {
+export default function ThemeSelector() {
   const { theme, setTheme } = useTheme()
   const [open, setOpen] = useState(false)
 
