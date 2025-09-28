@@ -1,10 +1,10 @@
+"use client"
+import { Theme } from "@/app/types/apps";
 import { RiCheckLine, RiComputerLine, RiMoonLine, RiSunLine } from "@remixicon/react";
 import { useTheme } from "next-themes";
 import { useState } from "react";
 import ActionButton from "../action-button";
 import { PortalToFollowElem, PortalToFollowElemContent, PortalToFollowElemTrigger } from "../portal-to-follow-elem";
-
-export type Theme = "light" | "dark" | "system"
 
 // 创建一个可复用的主题选项组件
 interface ThemeOptionProps {

@@ -1,6 +1,13 @@
 "use client"
+import { WorkspaceProvider } from "@/app/context/workspace-context";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import DifyLogo from "../base/logo/dify-logo";
+import WorkspaceSelector from "./account-dropdown/workspace-selector";
+
+const DifyLogo = dynamic(() => import("../base/logo/dify-logo"), {
+  ssr: false,
+  loading: () => <div className="w-12 h-[22px] bg-transparent"></div>
+});
 
 export default function Header() {
   return (
@@ -10,6 +17,9 @@ export default function Header() {
           <DifyLogo />
         </Link>
         <div className="mx-1.5 shrink-0 font-light text-divider-deep">/</div>
+        <WorkspaceProvider>
+          <WorkspaceSelector />
+        </WorkspaceProvider>
       </div>
     </div>
   )

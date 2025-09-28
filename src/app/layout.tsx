@@ -26,12 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased color-scheme h-full select-auto`}
       >
         <ThemeProvider
+          attribute={"data-theme"}
           defaultTheme="system"
           enableSystem
           enableColorScheme={false}
+          disableTransitionOnChange
         >
           {children}
         </ThemeProvider>

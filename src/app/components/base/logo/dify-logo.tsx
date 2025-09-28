@@ -1,6 +1,7 @@
+"use client"
+import useTheme from "@/app/hooks/use-theme";
 import classNames from "@/utils/classNames";
 import { cva, VariantProps } from "class-variance-authority";
-import { useTheme } from "next-themes";
 
 export type LogoSize = "small" | "medium" | "large";
 export type LogoStyle = "default" | "monochromeWhite"
@@ -35,11 +36,12 @@ export default function DifyLogo({
   className
 }: DifyLogoProps & VariantProps<typeof logoVariants>) {
   const { theme } = useTheme()
+  console.log("Current theme in DifyLogo:", theme)
   const themeStyle = (theme === "dark" && style === "default") ? "monochromeWhite" : style
   return (
     <img
       src={`${logoPathMap[themeStyle]}`}
-      className={classNames("block object-contain", className, logoVariants({ size }))}
+      className={classNames("block object-contain", logoVariants({ size }), className)}
       alt="Dify Logo"
     />
   )

@@ -1,3 +1,4 @@
+"use client"
 const Apps = () => {
   return (
     <div className="min-h-screen">
