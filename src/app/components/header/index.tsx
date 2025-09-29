@@ -30,7 +30,7 @@ export default function Header() {
         <ExploreNav className={navClassName} />
         <AppNav />
         <DatasetNav />
-        <ToolsNav />
+        <ToolsNav className={navClassName} />
       </div>
       <div></div>
     </div>

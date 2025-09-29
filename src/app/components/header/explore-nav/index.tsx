@@ -1,5 +1,5 @@
 import classNames from "@/utils/classNames"
-import { RiPlaneFill, RiPlaneLine } from "@remixicon/react"
+import { RiPlanetFill, RiPlanetLine } from "@remixicon/react"
 import Link from "next/link"
 import { useSelectedLayoutSegment } from "next/navigation"
 
@@ -21,8 +21,8 @@ export default function ExploreNav({ className }: ExploreNavProps) {
       )}
     >
       {activated
-        ? <RiPlaneFill className="size-4" />
-        : <RiPlaneLine className="size-4" />
+        ? <RiPlanetFill className="size-4" />
+        : <RiPlanetLine className="size-4" />
       }
       <div className="ml-2 max-[1024px]:hidden">
         探索
