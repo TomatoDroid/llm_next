@@ -1,7 +1,7 @@
+import MailAndPasswordAuth from "./components/mail-and-password-auth";
+
 export default function SignIn() {
   return (
-    <div>
-      <div>1</div>
-    </div>
+    <MailAndPasswordAuth />
   )
 }
