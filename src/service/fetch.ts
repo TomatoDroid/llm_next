@@ -1,4 +1,4 @@
-import ky, { AfterResponseHook, Hooks } from "ky"
+import ky, { AfterResponseHook, BeforeRequestHook, Hooks } from "ky"
 import { IOtherOptions } from "./base"
 
 export type FetchOptionType = Omit<RequestInit, "body"> & {
@@ -15,8 +15,17 @@ export const ContentType = {
   downloadZip: 'application/zip', // for download
   upload: 'multipart/form-data', // for upload
 }
+
+export async function getAccessToken() {
+  return localStorage.getItem('console_token') || ''
+}
 const afterResponse204: AfterResponseHook = (_request, _options, response) => {
   if (response.status === 204) return Response.json({ result: 'success' })
+}
+
+const beforeRequestAuthorization: BeforeRequestHook = async (request) => {
+  const accessToken = await getAccessToken()
+  request.headers.set('Authorization', `Bearer ${accessToken}`)
 }
 
 const baseHooks: Hooks = {
@@ -43,13 +52,15 @@ export const base = async<T>(url: string, options: FetchOptionType = {}, otherOp
   const { params, body, headers, ...init } = Object.assign({}, baseOptions, options)
   const { bodyStringify = true } = otherOptions
 
-  const fetchPathname = url.startsWith("/") ? url : `/${url}`
+  const fetchPathname = process.env.NEXT_PUBLIC_API_PREFIX + "/console/api" + (url.startsWith("/") ? url : `/${url}`)
 
   const client = baseClient.extend({
     hooks: {
       ...baseHooks,
       beforeError: [],
-      beforeRequest: [],
+      beforeRequest: [
+        beforeRequestAuthorization
+      ],
       afterResponse: [],
     }
   })
@@ -62,9 +73,10 @@ export const base = async<T>(url: string, options: FetchOptionType = {}, otherOp
     },
     ...(bodyStringify ? { json: body } : { body: body as BodyInit }),
     searchParams: params,
-    fetch(resource: RequestInfo | URL, options?: RequestInit) {
-      return globalThis.fetch(resource, options)
-    }
+    // fetch(resource: RequestInfo | URL, options?: RequestInit) {
+    //   console.log(resource, options)
+    //   return globalThis.fetch(resource, options)
+    // }
   })
   return await res.json() as T
 }

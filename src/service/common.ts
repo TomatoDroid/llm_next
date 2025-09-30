@@ -1,11 +1,12 @@
 import { Fetcher } from 'swr'
+import { post } from './base'
 
 type LoginSuccess = {
   result: 'success'
   data: { access_token: string, refresh_token: string }
 }
 type LoginFail = {
-  status: 'fail'
+  result: 'fail'
   data: string
   code: string
   message: string

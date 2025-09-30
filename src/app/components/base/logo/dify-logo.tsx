@@ -36,7 +36,6 @@ export default function DifyLogo({
   className
 }: DifyLogoProps & VariantProps<typeof logoVariants>) {
   const { theme } = useTheme()
-  console.log("Current theme in DifyLogo:", theme)
   const themeStyle = (theme === "dark" && style === "default") ? "monochromeWhite" : style
   return (
     <img

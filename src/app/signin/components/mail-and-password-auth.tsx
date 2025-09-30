@@ -1,10 +1,11 @@
 "use client";
 import Button from "@/app/components/base/button";
 import Input from "@/app/components/base/input";
+import Toast from "@/app/components/base/toast";
+import { login } from "@/service/common";
 import { noop } from "lodash-es";
 import Link from "next/link";
 import { useState } from "react";
-import { login } from "../../../../sevice/common";
 
 export default function MailAndPasswordAuth() {
   const [email, setEmail] = useState("")
@@ -21,12 +22,21 @@ export default function MailAndPasswordAuth() {
         language: '',
         remember_me: true
       }
-      await login({
+      const res = await login({
         url: '/login',
         body: loginData,
       })
-    } catch (error) {
-
+      if (res.result === "success") {
+        Toast.notify({
+          type: "success",
+          message: "登录成功",
+        })
+      } else {
+        Toast.notify({
+          type: "error",
+          message: res.data,
+        })
+      }
     } finally {
       setIsLoading(false)
     }
