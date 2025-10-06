@@ -5,6 +5,7 @@ import Toast from "@/app/components/base/toast";
 import { login } from "@/service/common";
 import { noop } from "lodash-es";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function MailAndPasswordAuth() {
@@ -12,11 +13,12 @@ export default function MailAndPasswordAuth() {
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
+  const router = useRouter()
 
   const handleEmailPAsswordLogin = async () => {
     try {
       setIsLoading(true)
-      const loginData: Record<string, any> = {
+      const loginData: Record<string, unknown> = {
         email,
         password,
         language: '',
@@ -31,6 +33,9 @@ export default function MailAndPasswordAuth() {
           type: "success",
           message: "登录成功",
         })
+        localStorage.setItem("console_token", res.data.access_token)
+        localStorage.setItem("refresh_token", res.data.refresh_token)
+        router.replace("/apps")
       } else {
         Toast.notify({
           type: "error",
