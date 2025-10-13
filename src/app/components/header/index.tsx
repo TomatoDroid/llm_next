@@ -1,11 +1,14 @@
 "use client"
+import AccountDropdown from "@/app/components/header/account-dropdown";
 import { WorkspaceProvider } from "@/app/context/workspace-context";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import WorkspaceSelector from "./account-dropdown/workspace-selector";
 import AppNav from "./app-nav";
 import DatasetNav from "./dataset-nav";
+import { EnvNav } from "./env-nav";
 import ExploreNav from "./explore-nav";
+import { PluginsNav } from "./plugins-nav";
 import ToolsNav from "./tools-nav";
 
 const DifyLogo = dynamic(() => import("../base/logo/dify-logo"), {
@@ -32,7 +35,13 @@ export default function Header() {
         <DatasetNav />
         <ToolsNav className={navClassName} />
       </div>
-      <div></div>
+      <div className="flex min-w-0 flex-1 justify-end pl-2">
+        <EnvNav />
+        <div className="mr-2">
+          <PluginsNav />
+        </div>
+        <AccountDropdown />
+      </div>
     </div>
   )
 }
