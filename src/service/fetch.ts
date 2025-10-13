@@ -50,7 +50,7 @@ export const baseOptions: RequestInit = {
 }
 export const base = async<T>(url: string, options: FetchOptionType = {}, otherOptions: IOtherOptions = {}): Promise<T> => {
   const { params, body, headers, ...init } = Object.assign({}, baseOptions, options)
-  const { bodyStringify = true } = otherOptions
+  const { bodyStringify = true, needAllResponseContent } = otherOptions
 
   const fetchPathname = process.env.NEXT_PUBLIC_API_PREFIX + "/console/api" + (url.startsWith("/") ? url : `/${url}`)
 
@@ -73,10 +73,14 @@ export const base = async<T>(url: string, options: FetchOptionType = {}, otherOp
     },
     ...(bodyStringify ? { json: body } : { body: body as BodyInit }),
     searchParams: params,
-    // fetch(resource: RequestInfo | URL, options?: RequestInit) {
-    //   console.log(resource, options)
-    //   return globalThis.fetch(resource, options)
-    // }
+    fetch(resource: RequestInfo | URL, options?: RequestInit) {
+      return globalThis.fetch(resource, options)
+    }
   })
+
+  if (needAllResponseContent) {
+    return res as T
+  }
+
   return await res.json() as T
 }

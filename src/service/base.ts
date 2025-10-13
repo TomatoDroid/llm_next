@@ -3,6 +3,7 @@ import { base } from "./fetch"
 
 export type IOtherOptions = {
   bodyStringify?: boolean
+  needAllResponseContent?: boolean
 }
 
 const baseFetch = base
@@ -15,9 +16,14 @@ export const request = async<T>(url: string, options = {}, otherOptions?: IOther
     }
   } catch (error) {
     console.error(error)
+    return Promise.reject(error)
   }
 }
 
 export const post = <T>(url: string, options = {}, otherOptions?: IOtherOptions) => {
   return request<T>(url, Object.assign({}, options, { method: "POST" }), otherOptions)
+}
+
+export const get = <T>(url: string, options = {}, otherOptions?: IOtherOptions) => {
+  return request<T>(url, Object.assign({}, options, { method: "GET" }), otherOptions)
 }

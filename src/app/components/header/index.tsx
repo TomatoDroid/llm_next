@@ -35,7 +35,7 @@ export default function Header() {
         <DatasetNav />
         <ToolsNav className={navClassName} />
       </div>
-      <div className="flex min-w-0 flex-1 justify-end pl-2">
+      <div className="flex min-w-0 flex-1 items-center justify-end pl-2 pr-3 min-[1280px]:pl-3">
         <EnvNav />
         <div className="mr-2">
           <PluginsNav />
