@@ -1,4 +1,4 @@
-import { UserProfileOriginResponse } from '@/app/models/common'
+import { CommonResponse, UserProfileOriginResponse } from '@/app/models/common'
 import { Fetcher } from 'swr'
 import { get, post } from './base'
 
@@ -19,4 +19,8 @@ export const login: Fetcher<LoginResponse, { url: string, body: Record<string, a
 
 export const fetchUserProfile: Fetcher<UserProfileOriginResponse, { url: string; params: Record<string, any> }> = ({ url, params }) => {
   return get<UserProfileOriginResponse>(url, params, { needAllResponseContent: true }) as Promise<UserProfileOriginResponse>
+}
+
+export const logout: Fetcher<CommonResponse, { url: string, params: Record<string, any> }> = ({ url, params }) => {
+  return get<CommonResponse>(url, params) as Promise<CommonResponse>
 }

@@ -1,3 +1,7 @@
+export type CommonResponse = {
+  result: 'success' | 'error'
+}
+
 export type IWorkspace = {
   id: string
   name: string
