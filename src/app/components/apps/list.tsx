@@ -19,9 +19,14 @@ const List = () => {
         <div className="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-y-2 bg-background-body px-12 pb-2 pt-4 leading-[56px]">
           <TabSliderNew value="all" onChange={() => { }} options={options} />
           <div className="flex items-center gap-2">
-            <CheckboxWithLabel />
+            <CheckboxWithLabel
+              className="mr-2"
+              isChecked
+              label="我创建的"
+              onChange={() => { }}
+            />
             <TagFilter />
-            <Input />
+            <Input wrapperClassName="w-[200px]" />
           </div>
         </div>
         <div>1</div>
