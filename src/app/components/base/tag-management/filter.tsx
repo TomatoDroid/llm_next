@@ -16,9 +16,11 @@ const TagFilter = ({
     <PortalToFollowElem open={open} onOpenChange={setOpen} placement="bottom-start" offset={4}>
       <div className="relative">
         <PortalToFollowElemTrigger onClick={() => setOpen(!open)} className="">
-
+          <div></div>
         </PortalToFollowElemTrigger>
-        <PortalToFollowElemContent></PortalToFollowElemContent>
+        <PortalToFollowElemContent>
+          <div></div>
+        </PortalToFollowElemContent>
       </div>
     </PortalToFollowElem>
   )
